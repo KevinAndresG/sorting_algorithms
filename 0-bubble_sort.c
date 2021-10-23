@@ -11,11 +11,9 @@ void bubble_sort(int *array, size_t size)
 	int swap = 0;
 	size_t ssizze = size;
 	int *arraytosort = array;
-	int flag = 0;
 
 	for (l = 0; l < ssizze - 1; l++)
 	{
-		flag = 0;
 		for (k = 0; k < (ssizze - 1 - l); k++)
 		{
 			if (arraytosort[k] > arraytosort[k + 1])
@@ -23,13 +21,8 @@ void bubble_sort(int *array, size_t size)
 				swap = arraytosort[k];
 				arraytosort[k] = arraytosort[k + 1];
 				arraytosort[k + 1] = swap;
-				flag++;
 				print_array(arraytosort, ssizze);
 			}
-		}
-		if (flag == 0)
-		{
-			break;
 		}
 	}
 }
