@@ -1,9 +1,8 @@
 #include "sort.h"
 
 /**
- * bubble_sort - function that sorts in ascending order
- * @array: the array to be sorted
- * @size: the size of the array
+ * insertion_sort_list - function that sorts in ascending order
+ * @list: the array to be sorted
  * Return: this function doesn't return
  */
 
@@ -12,16 +11,10 @@ void insertion_sort_list(listint_t **list)
 	listint_t *curr, *tmp, *tmp2;
 
 	if (!list)
-	{
 		return;
-	}
 	if ((*list)->next == NULL)
-	{
 		return;
-	}
-
 	tmp = (*list)->next;
-
 	while (list)
 	{
 		curr = *list;
