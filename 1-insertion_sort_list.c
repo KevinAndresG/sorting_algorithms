@@ -9,28 +9,37 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *head = *list;
-	int ssize = 0;
-	int i = 0, j = 0, key = 0;
+	listint_t *curr, *tmp, *tmp2;
 
-	head = malloc(sizeof(listint_t));
-
-	if (head == NULL)
+	while (*list)
 	{
-		return;
-	}
-
-	listint_t *temp = head;
-
-	while ((*list) != NULL)
-	{
-		ssize++;
-		(*list) = (*list)->next;
-	}
-	for(i = 1; i < ssize; i++)
-	{
-		temp = head->next;
-		j = i - i;
-
+		curr = *list;
+		/* tmp = list->n = list->next; */
+		tmp = (*list)->next;
+		if (curr->n > tmp->n)
+		{
+			/* temp2 = curr; */
+			curr->next = tmp->next;
+			tmp->prev = curr->prev;
+			tmp->next = curr;
+			curr->prev = tmp;
+			if (tmp->n < tmp->prev->n)
+			{
+				while (tmp->prev)
+				{
+					tmp2 = tmp->prev;
+					if (tmp->n > tmp2->n)
+					{
+						tmp2->next = tmp->next;
+						tmp->prev = tmp2->prev;
+						tmp2->prev = tmp;
+						tmp->next = tmp2;
+					}
+					tmp = tmp->prev;
+				}
+			}
+		}
+		*list = (*list)->next;
+		print_list(*list);
 	}
 }
