@@ -9,30 +9,29 @@
 
 void selection_sort(int *array, size_t size)
 {
-    size_t i = 0;
-    size_t j = 0;
-    int *list = array;
-    int *listord[size];
+	size_t i = 0;
+	size_t j = 0;
+	int *toswap = array;
 
-    if (!list)
-    {
-        return;
-    }
-    for (i = 0; i < size - 1; i++)
-    {
-        size_t numless = i;
+	if (!array)
+	{
+		return;
+	}
+	for (i = 0; i < size - 1; i++)
+	{
+		size_t numless = i;
 
-        for (j = i + 1; j < size; j++)
-        {
-            if (list[j] < list[numless])
-            {
-                numless = j;
-            }
-        }
-        if (numless != i)
-        {
-            listord = _swap(*list, i, j);
-            print_list(*listord);
-        }
-    }
+		for (j = i + 1; j < size; j++)
+		{
+			if (array[j] < array[numless])
+			{
+				numless = j;
+			}
+		}
+		if (numless != i)
+		{
+			toswap = _swap(array, i, numless);
+			print_array(toswap, size);
+		}
+	}
 }

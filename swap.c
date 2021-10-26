@@ -8,7 +8,7 @@
  * Return: a list
  */
 
-int _swap(int list, int value1, int value2)
+int *_swap(int *list, int value1, int value2)
 {
 	int tmp = list[value1];
 
