@@ -27,5 +27,6 @@ void print_list(const listint_t *list);
 /* our swap function */
 int *_swap(int *list, int value1, int value2);
 void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
 
 #endif /* SORT_H */
