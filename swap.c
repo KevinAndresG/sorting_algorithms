@@ -2,18 +2,18 @@
 
 /**
  * _swap - swap two values from an array
- * @value1: first value to swap
- * @value2: second value to swap
  * @list: list to do a swap
+ * @valone: first value to swap
+ * @valtwo: second value to swap
  * Return: a list
  */
 
-int *_swap(int *list, int value1, int value2)
+int *_swap(int *list, int valone, int valtwo)
 {
-	int tmp = list[value1];
+	int tmp = list[valone];
 
-	list[value1] = list[value2];
-	list[value2] = tmp;
+	list[valone] = list[valtwo];
+	list[valtwo] = tmp;
 
 	return (list);
 }
